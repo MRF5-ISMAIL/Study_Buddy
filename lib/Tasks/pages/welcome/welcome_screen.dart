@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_chat/Screens/Dashboard/dashboard.dart';
+import 'package:flutter_application_chat/Screens/Onboarding/onboarding_start.dart';
 import 'package:flutter_application_chat/Tasks/app_shell.dart';
 import 'package:flutter_application_chat/Tasks/pages/welcome/welcome_content.dart';
 // import 'package:karman_app/pages/welcome/welcome_content.dart';
@@ -223,6 +225,7 @@ class WelcomeScreenState extends State<WelcomeScreen>
     );
   }
 
+
   Widget _buildFinalPage(BoxConstraints constraints) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -268,11 +271,9 @@ class WelcomeScreenState extends State<WelcomeScreen>
 
     Navigator.of(context).pushReplacement(
       CupertinoPageRoute(
-        builder: (context) => AppShell(
-          key: AppShell.globalKey,
-          initialTabIndex: lastUsedTabIndex,
-        ),
+        builder: (context) => OnboardingStart()
       ),
     );
   }
+  
 }

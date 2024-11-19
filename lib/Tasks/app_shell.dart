@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_application_chat/Screens/Dashboard/dashboard.dart';
 import 'package:flutter_application_chat/Tasks/pages/habit/habits_page.dart';
 
 import 'pages/focus/focus_page.dart';
@@ -96,7 +97,7 @@ class AppShellState extends State<AppShell> {
       tabBuilder: (context, index) {
         switch (index) {
           case 0:
-            return CupertinoTabView(builder: (context) => HabitsPage());
+            return CupertinoTabView(builder: (context) => Dashboard());
           case 1:
             return CupertinoTabView(builder: (context) => TasksPage());
           case 2:
