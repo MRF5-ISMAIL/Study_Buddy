@@ -6,9 +6,15 @@ import 'package:flutter_application_chat/widgets/Dashboard/task_progress_card.da
 
 import 'package:tcard/tcard.dart';
 
-class DashboardOverview extends StatelessWidget {
+class DashboardOverview extends StatefulWidget {
   const DashboardOverview({Key? key}) : super(key: key);
 
+  @override
+  State<DashboardOverview> createState() => _DashboardOverviewState();
+}
+      bool areCardsVisible = true;
+
+class _DashboardOverviewState extends State<DashboardOverview> {
   @override
   Widget build(BuildContext context) {
     final dynamic data = AppData.progressIndicatorList;
@@ -26,13 +32,22 @@ class DashboardOverview extends StatelessWidget {
 
     return Column(
       children: [
+        if (areCardsVisible) ...[
         Container(
           height: 150,
           child: TCard(
             cards: cards,
+            onEnd: () {
+              setState((){
+                   areCardsVisible = false;
+
+              });
+            },
           ),
+        
         ),
         AppSpaces.verticalSpace10,
+        ],
         Column(
           children: [
             

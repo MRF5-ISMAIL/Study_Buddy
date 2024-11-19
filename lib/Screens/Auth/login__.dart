@@ -99,7 +99,7 @@ Widget build(BuildContext context) {
                     placeholder: "Password",
                     keyboardType: "text",
                     controller: _passController,
-                    obscureText: !obscureText,
+                    obscureText: obscureText,
                     label: "Your Password",
                   ),
                   AppSpaces.verticalSpace40,
