@@ -28,14 +28,16 @@ class NotificationScreen extends StatelessWidget {
             ));
     return 
     
-    Padding(
-        padding: EdgeInsets.only(left: 20.0, right: 20.0),
-        child: SafeArea(
-          child: Column(children: [
-            DefaultNav(title: "Notification", type: ProfileDummyType.Image),
-            AppSpaces.verticalSpace20,
-            Expanded(child: ListView(children: [...notificationCards]))
-          ]),
-        ));
+    Scaffold(
+      body: Padding(
+          padding: EdgeInsets.only(left: 20.0, right: 20.0),
+          child: SafeArea(
+            child: Column(children: [
+              DefaultNav(title: "Notification", type: ProfileDummyType.Image),
+              AppSpaces.verticalSpace20,
+              Expanded(child: ListView(children: [...notificationCards]))
+            ]),
+          )),
+    );
   }
 }

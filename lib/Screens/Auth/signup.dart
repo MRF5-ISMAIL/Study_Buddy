@@ -7,6 +7,7 @@ import 'package:flutter_application_chat/widgets/Forms/form_input_with%20_label.
 // import 'package:flutter_application_chat/widgets/Forms/form_input_with_label.dart';
 import 'package:flutter_application_chat/widgets/Forms/selection.dart';
 import 'package:flutter_application_chat/widgets/Navigation/back.dart';
+import 'package:flutter_application_chat/widgets/Onboarding/image_outlined_button.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -20,7 +21,7 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
   TextEditingController _nameController = TextEditingController();
   TextEditingController _passController = TextEditingController();
-  // TextEditingController _emailController = TextEditingController();  // Controller for email
+  TextEditingController _emailController = TextEditingController();  // Controller for email
   TextEditingController _confirmPassController = TextEditingController();  // Controller for confirming password
   bool obscureText = true;
   bool isAgreed = false;  // To track if the user agreed to the terms
@@ -73,44 +74,61 @@ class _SignUpState extends State<SignUp> {
                       obscureText: obscureText,
                       label: "Your Name", 
                     ),
-                    // SizedBox(height: 30),
-                    // LabelledFormInput(
-                    //   placeholder: "Email",
-                    //   keyboardType: "email",
-                    //   controller: _emailController,
-                    //   obscureText: false,
-                    //   label: "Your Email", 
-                    // ),
+                    SizedBox(height: 20),
+                    LabelledFormInput(
+                      placeholder: "Email",
+                      keyboardType: "email",
+                      controller: _emailController,
+                      obscureText: false,
+                      label: "Your Email", 
+                    ),
                   
-                    SizedBox(height: 40),
-                    Center(
-                      child: MajorDropdown(
-                        labelText: 'Choose your specialty',
-                        hint: 'Choose your specialty',
-                        majors: customMajors, // Send the majors here
-                        selectedMajor: selectedMajor,
-                        onChanged: (String? newValue) {
-                          setState(() {
-                            selectedMajor = newValue;
-                          });
-                        },
-                      ),
+                   SizedBox(height: 20),
+                       LabelledFormInput(
+                      placeholder: "Password",
+                      keyboardType: "text",
+                      controller: _passController,
+                      obscureText: obscureText,
+                      label: "Your Password",
+                    ),
+                    SizedBox(height: 20),
+                    LabelledFormInput(
+                      placeholder: "Confirm Password",
+                      keyboardType: "text",
+                      controller: _confirmPassController,
+                      obscureText: obscureText,
+                      label: "Confirm Your Password",
                     ),
                    SizedBox(height: 40),
-                    Center(
-                      child: MajorDropdown(
-                        labelText: 'Role',
-                        hint: 'Student',
-                        majors: roles, // Send the majors here
-                        selectedMajor: selectedRole,
-                        onChanged: (String? newValue) {
-                          setState(() {
-                            selectedRole = newValue;
-                          });
-                        },
-                      ),
-                    ),
-                    SizedBox(height: 40),
+  
+                  //   Center(
+                  //     child: MajorDropdown(
+                  //       labelText: 'Choose your specialty',
+                  //       hint: 'Choose your specialty',
+                  //       majors: customMajors, // Send the majors here
+                  //       selectedMajor: selectedMajor,
+                  //       onChanged: (String? newValue) {
+                  //         setState(() {
+                  //           selectedMajor = newValue;
+                  //         });
+                  //       },
+                  //     ),
+                  //   ),
+                  //  SizedBox(height: 40),
+                  //   Center(
+                  //     child: MajorDropdown(
+                  //       labelText: 'Role',
+                  //       hint: 'Student',
+                  //       majors: roles, // Send the majors here
+                  //       selectedMajor: selectedRole,
+                  //       onChanged: (String? newValue) {
+                  //         setState(() {
+                  //           selectedRole = newValue;
+                  //         });
+                  //       },
+                  //     ),
+                  //   ),
+                  //   SizedBox(height: 40),
                     Container(
                       width: double.infinity,
                       height: 60,
@@ -123,8 +141,42 @@ class _SignUpState extends State<SignUp> {
                         child: Text('Next ', style: GoogleFonts.lato(fontSize: 20, color: Colors.white)),
                       ),
                      ),
-               
+                     AppSpaces.verticalSpace20,
+                     Align(
+    alignment: Alignment.center, // لجعل النص في المنتصف أفقيًا
+    child: Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Text(
+        "Contnue by Socil Media",
+        textAlign: TextAlign.center,
+        style: GoogleFonts.lato(
+          fontSize: 15,
+          color: HexColor.fromHex("666A7A"),
+        ),
+      ),
+    ),
+  ),
+                     AppSpaces.verticalSpace10,
+               Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: OutlinedButtonWithImage(
+                          imageUrl: "assets/google_icon.png",
+                          onPressed: SignUsingGoogle,
+                        ),
+                      ),
+                      const SizedBox(width: 20),
+                      Expanded(
+                        child: OutlinedButtonWithImage(
+                          imageUrl: "assets/facebook_icon.png",
+                        ),
+                      ),
+                    ],
+                  ),
+                  AppSpaces.verticalSpace20,
                   ],
+                  
                 ),
               ),
             ),

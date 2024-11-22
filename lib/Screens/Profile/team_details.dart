@@ -112,6 +112,7 @@ class TeamProjectOverview extends StatelessWidget {
         color: AppData.productData[index]['color'],
         ratingsUpperNumber: AppData.productData[index]['ratingsUpperNumber'],
         ratingsLowerNumber: AppData.productData[index]['ratingsLowerNumber'],
+        image: "assets/ChatGPT-removebg-preview.png",
       ),
       itemCount: 4,
     );

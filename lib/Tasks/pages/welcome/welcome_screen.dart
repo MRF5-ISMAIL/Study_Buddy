@@ -1,9 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_chat/Screens/Auth/login__.dart';
 import 'package:flutter_application_chat/Screens/Dashboard/dashboard.dart';
 import 'package:flutter_application_chat/Screens/Onboarding/onboarding_start.dart';
 import 'package:flutter_application_chat/Tasks/app_shell.dart';
 import 'package:flutter_application_chat/Tasks/pages/welcome/welcome_content.dart';
+import 'package:flutter_application_chat/Values/values.dart';
+import 'package:flutter_application_chat/widgets/DarkBackground/darkRadialBackground.dart';
+import 'package:google_fonts/google_fonts.dart';
 // import 'package:karman_app/pages/welcome/welcome_content.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -66,12 +70,17 @@ class WelcomeScreenState extends State<WelcomeScreen>
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      backgroundColor: CupertinoColors.black,
+      
+      // backgroundColor:AppColors.primaryBackgroundColor,
       child: SafeArea(
         child: LayoutBuilder(
           builder: (context, constraints) {
             return Column(
               children: [
+                  DarkRadialBackground(
+          color: HexColor.fromHex("#181a1f"),
+          position: "topLeft",
+        ),
                 Expanded(
                   child: PageView(
                     controller: _pageController,
@@ -175,11 +184,12 @@ class WelcomeScreenState extends State<WelcomeScreen>
         Image.asset('lib/Tasks/assets/images/icon/iOS/icon.png',
             height: constraints.maxHeight * 0.2),
         SizedBox(height: constraints.maxHeight * 0.05),
-        const Text(
+         Text(
           'Welcome to Study Buddy',
           style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
+              fontSize: 28,
+              inherit: bool.fromEnvironment(" "),
+              // fontFamily: FontFa,
               color: CupertinoColors.white),
         ),
       ],
@@ -197,6 +207,7 @@ class WelcomeScreenState extends State<WelcomeScreen>
           style: const TextStyle(
               fontSize: 28,
               fontWeight: FontWeight.bold,
+              inherit: bool.fromEnvironment(" "),
               color: CupertinoColors.white),
           textAlign: TextAlign.center,
         ),
@@ -218,6 +229,7 @@ class WelcomeScreenState extends State<WelcomeScreen>
               fontSize: 20,
               color: CupertinoColors.white,
               fontWeight: FontWeight.w600,
+              inherit: bool.fromEnvironment(" ")
             ),
           ),
         ),
@@ -234,6 +246,7 @@ class WelcomeScreenState extends State<WelcomeScreen>
         const Text(
           'Open Source',
           style: TextStyle(
+            inherit: bool.fromEnvironment(" "),
               fontSize: 28,
               fontWeight: FontWeight.bold,
               color: CupertinoColors.white),
@@ -253,6 +266,7 @@ class WelcomeScreenState extends State<WelcomeScreen>
             'karman is an open-source productivity app. Contribute and make it better!',
             textAlign: TextAlign.center,
             style: TextStyle(
+              inherit: bool.fromEnvironment(" "),
               fontSize: 20,
               color: CupertinoColors.white,
               fontWeight: FontWeight.w600,
@@ -271,7 +285,7 @@ class WelcomeScreenState extends State<WelcomeScreen>
 
     Navigator.of(context).pushReplacement(
       CupertinoPageRoute(
-        builder: (context) => OnboardingStart()
+        builder: (context) => Login(email: '',)
       ),
     );
   }

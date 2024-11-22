@@ -74,7 +74,9 @@ class KarmanApp extends StatelessWidget {
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
       theme: const CupertinoThemeData(
+  
         brightness: Brightness.dark,
+        primaryColor: CupertinoColors.activeBlue
       ),
       home: showWelcome
           ? const WelcomeScreen()

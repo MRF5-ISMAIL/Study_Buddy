@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_chat/Screens/Onboarding/onboarding_carousel.dart';
+import 'package:flutter_application_chat/Tasks/pages/welcome/welcome_screen.dart';
 import 'package:flutter_application_chat/Values/values.dart';
 import 'package:flutter_application_chat/widgets/DarkBackground/darkRadialBackground.dart';
 import 'package:flutter_application_chat/widgets/Onboarding/background_image.dart';
@@ -84,7 +85,7 @@ class OnboardingStart extends StatelessWidget {
               angle: -math.pi / 4,
               child: InkWell(
                 onTap: () {
-                  Get.to(() => OnboardingCarousel());
+                  Get.to(() => WelcomeScreen());
                 },
                 child: Container(
                     width: 200,
@@ -129,7 +130,7 @@ class OnboardingStart extends StatelessWidget {
                       height: 60,
                       child: ElevatedButton(
                           onPressed: () {
-                            Get.to(() => OnboardingCarousel());
+                            Get.to(() => WelcomeScreen());
                           },
                           style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all<Color>(HexColor.fromHex("246CFE")),

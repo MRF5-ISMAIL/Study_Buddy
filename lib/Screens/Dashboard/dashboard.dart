@@ -36,8 +36,8 @@ class Dashboard extends StatelessWidget {
               DashboardNav(
                 icon: FontAwesomeIcons.bell,
                 image: "assets/man-head.png",
-                notificationCount: "2",
-                page: ChatScreen(),
+                notificationCount: "8",
+                page: NotificationScreen(),
                 title: "Dashboard",
                 onImageTapped: () {
                   Get.to(() => ProfileOverview());

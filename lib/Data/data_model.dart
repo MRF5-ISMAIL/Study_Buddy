@@ -268,7 +268,7 @@ class AppData {
 
   static final List<Map<String, dynamic>> productData = [
     {
-      "projectName": "ترجمةj",
+      "projectName": "ChatGPT",
       "category": "Design",
       "color": "A06AFA",
       "ratingsUpperNumber": 15,
@@ -281,33 +281,33 @@ class AppData {
       "ratingsUpperNumber": 8,
       "ratingsLowerNumber": 20
     },
-    {
-      "projectName": "Cubbies",
-      "category": "Design",
-      "color": "FF968E",
-      "ratingsUpperNumber": 15,
-      "ratingsLowerNumber": 20
-    },
-    {
-      "projectName": "OpenMind 🚀",
-      "category": "Development",
-      "color": "FFDE72",
-      "ratingsUpperNumber": 19,
-      "ratingsLowerNumber": 20
-    },
-    {
-      "projectName": "UI8 Platform",
-      "category": "Design",
-      "color": "A06AFA",
-      "ratingsUpperNumber": 10,
-      "ratingsLowerNumber": 20
-    },
-    {
-      "projectName": "3D Characters Inc.",
-      "category": "Development",
-      "color": "A6F69C",
-      "ratingsUpperNumber": 18,
-      "ratingsLowerNumber": 20
-    },
+    // {
+    //   "projectName": "Cubbies",
+    //   "category": "Design",
+    //   "color": "FF968E",
+    //   "ratingsUpperNumber": 15,
+    //   "ratingsLowerNumber": 20
+    // },
+    // {
+    //   "projectName": "OpenMind 🚀",
+    //   "category": "Development",
+    //   "color": "FFDE72",
+    //   "ratingsUpperNumber": 19,
+    //   "ratingsLowerNumber": 20
+    // },
+    // {
+    //   "projectName": "UI8 Platform",
+    //   "category": "Design",
+    //   "color": "A06AFA",
+    //   "ratingsUpperNumber": 10,
+    //   "ratingsLowerNumber": 20
+    // },
+    // {
+    //   "projectName": "3D Characters Inc.",
+    //   "category": "Development",
+    //   "color": "A6F69C",
+    //   "ratingsUpperNumber": 18,
+    //   "ratingsLowerNumber": 20
+    // },
   ];
 }

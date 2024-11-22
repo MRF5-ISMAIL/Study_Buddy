@@ -27,7 +27,7 @@ class ProjectDetailAppBar extends StatelessWidget {
         children: [
           Row(
             children: [
-              ColouredProjectBadge(color: color, category: category),
+              ColouredProjectBadge(color: color, category: category,image: "assets/ChatGPT-removebg-preview.png",),
               AppSpaces.horizontalSpace20,
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 Text(projectName,

@@ -4,6 +4,7 @@ import 'package:flutter_application_chat/Screens/Auth/login__.dart';
 import 'package:flutter_application_chat/Values/values.dart';
 import 'package:flutter_application_chat/widgets/DarkBackground/darkRadialBackground.dart';
 import 'package:flutter_application_chat/widgets/Forms/form_input_with%20_label.dart';
+import 'package:flutter_application_chat/widgets/Forms/selection.dart';
 import 'package:flutter_application_chat/widgets/Navigation/back.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -29,7 +30,16 @@ class _SignUpPage2State extends State<SignUpPage2> {
   // List<String> roles = ['Student', 'Assistant'];
   TextEditingController _emailController = TextEditingController();  // Controller for email
 
-  @override
+  List<String> customMajors = [
+    'Computer Science',
+    'Civil Engineering',
+    'Business Administration',
+    'Medicine',
+    'Law',
+  ];
+  String? selectedMajor;
+  String? selectedRole;
+  List<String> roles = ['Student', 'Assistant'];
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
@@ -59,32 +69,32 @@ class _SignUpPage2State extends State<SignUpPage2> {
                         ],
                       ),
                     ),
-                    // SizedBox(height: 30),
-                      SizedBox(height: 30),
-                    LabelledFormInput(
-                      placeholder: "Email",
-                      keyboardType: "email",
-                      controller: _emailController,
-                      obscureText: false,
-                      label: "Your Email", 
-                    ),
-                                        SizedBox(height: 30),
+                    // // SizedBox(height: 30),
+                    //   SizedBox(height: 30),
+                    // LabelledFormInput(
+                    //   placeholder: "Email",
+                    //   keyboardType: "email",
+                    //   controller: _emailController,
+                    //   obscureText: false,
+                    //   label: "Your Email", 
+                    // ),
+                    //                     SizedBox(height: 30),
 
-                    LabelledFormInput(
-                      placeholder: "Password",
-                      keyboardType: "text",
-                      controller: _passController,
-                      obscureText: obscureText,
-                      label: "Your Password",
-                    ),
-                    SizedBox(height: 20),
-                    LabelledFormInput(
-                      placeholder: "Confirm Password",
-                      keyboardType: "text",
-                      controller: _confirmPassController,
-                      obscureText: obscureText,
-                      label: "Confirm Your Password",
-                    ),
+                    // LabelledFormInput(
+                    //   placeholder: "Password",
+                    //   keyboardType: "text",
+                    //   controller: _passController,
+                    //   obscureText: obscureText,
+                    //   label: "Your Password",
+                    // ),
+                    // SizedBox(height: 20),
+                    // LabelledFormInput(
+                    //   placeholder: "Confirm Password",
+                    //   keyboardType: "text",
+                    //   controller: _confirmPassController,
+                    //   obscureText: obscureText,
+                    //   label: "Confirm Your Password",
+                    // ),
                     // SizedBox(height: 40),
                     // Center(
                     //   child: MajorDropdown(
@@ -99,6 +109,35 @@ class _SignUpPage2State extends State<SignUpPage2> {
                     //     },
                     //   ),
                     // ),
+                     SizedBox(height: 40),
+                    Center(
+                      child: MajorDropdown(
+                        labelText: 'Choose your specialty',
+                        hint: 'Choose your specialty',
+                        majors: customMajors, // Send the majors here
+                        selectedMajor: selectedMajor,
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            selectedMajor = newValue;
+                          });
+                        },
+                      ),
+                    ),
+                   SizedBox(height: 40),
+                    Center(
+                      child: MajorDropdown(
+                        labelText: 'Role',
+                        hint: 'Student',
+                        majors: roles, // Send the majors here
+                        selectedMajor: selectedRole,
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            selectedRole = newValue;
+                          });
+                        },
+                      ),
+                    ),
+                    SizedBox(height: 40),
                     SizedBox(height: 20),
                     Row(
                       children: [

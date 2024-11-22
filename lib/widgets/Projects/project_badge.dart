@@ -6,10 +6,12 @@ class ColouredProjectBadge extends StatelessWidget {
     Key? key,
     required this.color,
     required this.category,
+    required this.image
   }) : super(key: key);
 
   final String color;
   final String category;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +20,9 @@ class ColouredProjectBadge extends StatelessWidget {
         height: 60,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: HexColor.fromHex(color)),
-        child: Icon(Icons.bookmarks,
+            // color: HexColor.fromHex(color)),
+        ),
+        child: Image.asset(image,
             color: (category == "Development" ? Colors.black : Colors.white)));
   }
 }

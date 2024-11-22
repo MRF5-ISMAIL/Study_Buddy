@@ -99,7 +99,7 @@ class CreateProjectScreen extends StatelessWidget {
                     Row(
                       children: [
                         ColouredProjectBadge(
-                            color: "A06AFA", category: "Task List"),
+                            color: "A06AFA", category: "Task List",image: "assets/ChatGPT-removebg-preview.png",),
                         AppSpaces.horizontalSpace20,
                         Column(
                             crossAxisAlignment: CrossAxisAlignment.start,

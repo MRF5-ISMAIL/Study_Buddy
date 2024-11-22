@@ -18,6 +18,7 @@ class DefaultNav extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
       AppBackButton(),
+      
       Text(this.title,
           style: GoogleFonts.lato(fontSize: 20, color: Colors.white)),
       Builder(builder: (context) {

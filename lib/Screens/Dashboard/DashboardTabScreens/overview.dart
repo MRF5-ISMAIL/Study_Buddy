@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_chat/Data/data_model.dart';
+import 'package:flutter_application_chat/Tasks/pages/task/tasks_page.dart';
 import 'package:flutter_application_chat/Values/values.dart';
 import 'package:flutter_application_chat/widgets/Dashboard/overview_task_container.dart';
 import 'package:flutter_application_chat/widgets/Dashboard/task_progress_card.dart';
+import 'package:get/get.dart';
 
 import 'package:tcard/tcard.dart';
 
@@ -51,11 +53,16 @@ class _DashboardOverviewState extends State<DashboardOverview> {
         Column(
           children: [
             
-            OverviewTaskContainer(
-                cardTitle: "Total Task",
-                numberOfItems: "16",
-                imageUrl: "assets/orange_pencil.png",
-                backgroundColor: HexColor.fromHex("EFA17D")),
+            InkWell(
+              child: OverviewTaskContainer(
+                  cardTitle: "Total Task",
+                  numberOfItems: "16",
+                  imageUrl: "assets/orange_pencil.png",
+                  backgroundColor: HexColor.fromHex("EFA17D")),
+            onTap: (){
+          Get.to(() => TasksPage());
+            },)
+            ,
             OverviewTaskContainer(
                 cardTitle: "Completed",
                 numberOfItems: "32",
